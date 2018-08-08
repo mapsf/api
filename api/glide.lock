@@ -1,0 +1,33 @@
+hash: f91b6aad25bbe57c7b00e7e5631e617d716fd89313c66fb12184fe89a4c283b9
+updated: 2018-08-01T17:48:07.523432963Z
+imports:
+- name: github.com/go-redis/redis
+  version: 7e6413d4675d151fe8fbd067779f58f9dc3b2128
+  subpackages:
+  - internal
+  - internal/consistenthash
+  - internal/hashtag
+  - internal/pool
+  - internal/proto
+  - internal/singleflight
+  - internal/util
+- name: github.com/jinzhu/gorm
+  version: 409121d9e394922787885b001d148a05e3a42b6c
+  subpackages:
+  - dialects/postgres
+- name: github.com/jinzhu/inflection
+  version: 04140366298a54a039076d798123ffa108fff46c
+- name: github.com/joho/godotenv
+  version: 1709ab122c988931ad53508747b3c061400c2984
+  subpackages:
+  - autoload
+- name: github.com/julienschmidt/httprouter
+  version: 8c199fb6259ffc1af525cc3ad52ee60ba8359669
+- name: github.com/lib/pq
+  version: 90697d60dd844d5ef6ff15135d0203f65d2f53b8
+  subpackages:
+  - hstore
+  - oid
+- name: github.com/pilu/fresh
+  version: 9c0092493eff2825c3abf64e087b3383dec939c3
+testImports: []
