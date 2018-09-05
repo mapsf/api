@@ -1,21 +1,22 @@
 FROM golang:1.10
 
-ARG port
+ARG DOCKER_GOLANG_PORT
+ARG REPOSITORY_NAME
 
-ADD . /go/src/github.com/JILeXanDR/docker-compose-golang-postgre-govendor/api
+ADD . /go/src/github.com/${REPOSITORY_NAME}
 
-WORKDIR /go/src/github.com/JILeXanDR/docker-compose-golang-postgre-govendor/api
+WORKDIR /go/src/github.com/${REPOSITORY_NAME}
 
 # install package manager Glide https://github.com/Masterminds/glide
 RUN curl https://glide.sh/get | sh
 RUN go get github.com/pilu/fresh
 
 # install dependencies
-CMD glide install && fresh -c runner.conf main.go
+CMD glide up && fresh -c runner.conf main.go
 
 # build binary file
-#RUN go install github.com/JILeXanDR/docker-compose-golang-postgre-govendor/api
+#RUN go install github.com/${REPOSITORY_NAME}
 # run binary when container starts
 #ENTRYPOINT /go/bin/api
 
-EXPOSE ${port}
+EXPOSE ${DOCKER_GOLANG_PORT}

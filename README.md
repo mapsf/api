@@ -1,4 +1,4 @@
-## Golang+Vue and Docker quick start
+## Golang and Docker quick start
 
 ### The application consists of:
 * golang 1.10
@@ -38,11 +38,9 @@ To exec commands inside containers use `docker exec -i -t <container_name> bash`
 
 For example to install new API dependency:
 ```bash
-docker exec -i -t jilexandr_api bash
-glide get <package_name>
+docker exec -i -t mapsf glide get <package_name>
 ```
 
-- FRONTEND host [http://www.jilexandr.local](http://www.jilexandr.local)
 - API host [http://www.api.jilexandr.local](http://www.api.jilexandr.local)
 
 To get access via domain add to /etc/hosts

@@ -1,11 +1,11 @@
 package app
 
 import (
-	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"net/http"
 	"log"
 	"os"
 	"strconv"
+	"github.com/gorilla/handlers"
 )
 
 func getPort() int {
@@ -18,5 +18,13 @@ func getPort() int {
 
 func InitServer() {
 	log.Printf(`RUNNING API SERVER IN "%s" mode`, os.Getenv("APP_ENV"))
-	log.Fatalln(http.ListenAndServe(":"+strconv.Itoa(getPort()), getRouter()))
+	log.Printf(`ENTRY HOST IS http://%s`, os.Getenv("API_HOST"))
+
+	cors := handlers.CORS(
+		handlers.AllowedOrigins([]string{"*"}),
+		handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}),
+		handlers.AllowedMethods([]string{"GET", "POST"}),
+	)
+
+	log.Fatalln(http.ListenAndServe(":"+strconv.Itoa(getPort()), cors(getRouter())))
 }

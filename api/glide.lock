@@ -1,8 +1,10 @@
-hash: f91b6aad25bbe57c7b00e7e5631e617d716fd89313c66fb12184fe89a4c283b9
-updated: 2018-08-01T17:48:07.523432963Z
+hash: 7a4ef0b59eb865c22afcd9e3001443467f70d8a89822d84258a5cf57ebd4d88a
+updated: 2018-09-04T17:16:16.603242739Z
 imports:
+- name: github.com/dgrijalva/jwt-go
+  version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
 - name: github.com/go-redis/redis
-  version: 7e6413d4675d151fe8fbd067779f58f9dc3b2128
+  version: f3bba01df2026fc865f7782948845db9cf44cf23
   subpackages:
   - internal
   - internal/consistenthash
@@ -11,8 +13,16 @@ imports:
   - internal/proto
   - internal/singleflight
   - internal/util
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/handlers
+  version: 7e0847f9db758cdebd26c149d0ae9d5d0b9c98ce
+- name: github.com/gorilla/mux
+  version: e3702bed27f0d39777b0b37b664b6280e8ef8fbf
+- name: github.com/gorilla/websocket
+  version: 66b9c49e59c6c48f0ffce28c2d8b8a5678502c6d
 - name: github.com/jinzhu/gorm
-  version: 409121d9e394922787885b001d148a05e3a42b6c
+  version: 32455088f24d6b1e9a502fb8e40fdc16139dbea8
   subpackages:
   - dialects/postgres
 - name: github.com/jinzhu/inflection
@@ -21,10 +31,8 @@ imports:
   version: 1709ab122c988931ad53508747b3c061400c2984
   subpackages:
   - autoload
-- name: github.com/julienschmidt/httprouter
-  version: 8c199fb6259ffc1af525cc3ad52ee60ba8359669
 - name: github.com/lib/pq
-  version: 90697d60dd844d5ef6ff15135d0203f65d2f53b8
+  version: 4ded0e9383f75c197b3a2aaa6d590ac52df6fd79
   subpackages:
   - hstore
   - oid
