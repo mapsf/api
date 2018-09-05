@@ -4,10 +4,8 @@ import (
 	"log"
 	"github.com/mapsf/api/app"
 	"github.com/mapsf/api/app/db"
-)
-
-import (
 	"github.com/joho/godotenv"
+	"github.com/mapsf/api/app/repositories"
 )
 
 func handlePanic() {
@@ -36,6 +34,14 @@ func main() {
 
 	db.InitDb()
 	app.InitRedis()
+
+	player1, _ := repositories.GetPlayerByID(1)
+	player2, _ := repositories.GetPlayerByID(2)
+	distance, err := repositories.GetDistanceBetweenTwoPlayers(player1, player2)
+	if err != nil {
+		log.Println(err)
+	}
+	log.Printf("distance is %v", distance)
 
 	//go app.RunBots()
 

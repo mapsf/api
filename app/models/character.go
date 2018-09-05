@@ -1,8 +1,11 @@
 package models
 
-import "time"
+import (
+	"time"
+	"github.com/nferruzzi/gormGIS"
+)
 
-type Character struct {
+type Player struct {
 	Model
 	Login    string `gorm:"not null;unique" json:"login"`
 	Email    string `gorm:"unique" json:"email"`
@@ -17,7 +20,7 @@ type Character struct {
 	Online bool `gorm:"not null" json:"online"`
 
 	// координаты
-	Position string `gorm:"not null" json:"position"`
+	Location gormGIS.GeoPoint `gorm:"type:geometry(Geometry,4326)" json:"location"`
 
 	// статы
 	// сила

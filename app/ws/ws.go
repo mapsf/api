@@ -24,9 +24,8 @@ type ServerEvent struct {
 }
 
 type ClientEvent struct {
-	User *models.Character `json:"-"`
-	Type string            `json:"type"`
-	Data interface{}       `json:"data"`
+	Type string         `json:"type"`
+	Data interface{}    `json:"data"`
 }
 
 type hub struct {
@@ -44,7 +43,7 @@ func logError(err error) {
 }
 
 func debug(format string, args ... interface{}) {
-	log.Printf("[WebScokets] "+format, args...)
+	log.Printf("[WebSockets] "+format, args...)
 }
 
 func Emit(event ServerEvent, ids ... uint) error {
@@ -103,7 +102,7 @@ func Handler(p common.Params) common.ResponseRenderer {
 	return nil
 }
 
-func readMessage(message []byte, character *models.Character) {
+func readMessage(message []byte, player *models.Player) {
 
 	event := &ClientEvent{}
 
@@ -112,9 +111,5 @@ func readMessage(message []byte, character *models.Character) {
 		return
 	}
 
-	event.User = character
-
-	debug(`[RECEIVED] event -> "%v", data -> %v`, event.Type, event.Data)
-
-	processClientEvent(event)
+	processClientEvent(player, event)
 }

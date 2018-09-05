@@ -9,7 +9,7 @@ import (
 )
 
 func GetRootPathHandler(p common.Params) common.ResponseRenderer {
-	user := context.Get(p.Request, "user").(models.Character)
+	user := context.Get(p.Request, "user").(models.Player)
 	return common.JsonResponse{
 		Data:   map[string]string{"welcome": "This is the RESTful API", "login": user.Login},
 		Status: 200,

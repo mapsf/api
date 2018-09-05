@@ -1,5 +1,5 @@
-hash: 7a4ef0b59eb865c22afcd9e3001443467f70d8a89822d84258a5cf57ebd4d88a
-updated: 2018-09-04T17:16:16.603242739Z
+hash: 79ed24b05c36d683b8d9760c00ecd7029e4fe50e385959591e31e4d2f2f4b03c
+updated: 2018-09-05T20:07:27.873511114+03:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
@@ -36,6 +36,8 @@ imports:
   subpackages:
   - hstore
   - oid
+- name: github.com/nferruzzi/gormGIS
+  version: 03632ffdc35f0d70fcb8397fd6610e451bcc4b1f
 - name: github.com/pilu/fresh
   version: 9c0092493eff2825c3abf64e087b3383dec939c3
 testImports: []

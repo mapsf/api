@@ -6,19 +6,11 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"log"
 	"os"
-	"github.com/mapsf/api/app/models"
-	"time"
 )
 
 var (
 	Conn *gorm.DB
 )
-
-func panicIfErr(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
 
 func InitDb() {
 
@@ -34,55 +26,5 @@ func InitDb() {
 
 	Conn.LogMode(true)
 
-	allModels := []interface{}{&models.User{}, &models.Character{}, &models.Battle{}}
-
-	panicIfErr(Conn.DropTableIfExists(allModels...).Error)
-	panicIfErr(Conn.AutoMigrate(allModels...).Error)
-
-	chars := []models.Character{
-		{
-			Level:        0,
-			Login:        "ALEXANDR",
-			Sex:          "M",
-			Online:       true,
-			Bot:          false,
-			Email:        "jilexandr@gmail.com",
-			Experience:   0,
-			Password:     "1",
-			Position:     "49.444433,32.059766999999965",
-			RegisteredAt: time.Now(),
-			Reputation:   0,
-		},
-		{
-			Level:        0,
-			Login:        "bot1",
-			Sex:          "M",
-			Online:       true,
-			Bot:          true,
-			Email:        "bot1@gmail.com",
-			Experience:   0,
-			Password:     "1",
-			Position:     "49.444433,32.050766999999965",
-			RegisteredAt: time.Now(),
-			Reputation:   0,
-		},
-		{
-			Level:        0,
-			Login:        "bot2",
-			Sex:          "M",
-			Online:       true,
-			Bot:          true,
-			Email:        "bot2@gmail.com",
-			Experience:   0,
-			Password:     "1",
-			Position:     "49.424433,32.050766999999965",
-			RegisteredAt: time.Now(),
-			Reputation:   0,
-		},
-	}
-
-	for _, char := range chars {
-		err = Conn.Create(&char).Error
-		panicIfErr(err)
-	}
+	createSchema()
 }

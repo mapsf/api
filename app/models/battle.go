@@ -7,8 +7,8 @@ import (
 
 type Battle struct {
 	gorm.Model
-	Characters []*Character
-	Winner     *Character
+	Characters []*Player
+	Winner     *Player
 	StartedAt  time.Time
 	FinishedAt time.Time
 }

@@ -16,3 +16,4 @@ import:
   version: v3.2.0
 - package: github.com/gorilla/handlers
   version: v1.4.0
+- package: github.com/nferruzzi/gormGIS

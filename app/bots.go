@@ -4,9 +4,7 @@ import (
 	"github.com/mapsf/api/app/models"
 	"github.com/mapsf/api/app/db"
 	"time"
-	"strings"
 	"log"
-	"strconv"
 )
 
 type Position struct {
@@ -15,19 +13,16 @@ type Position struct {
 }
 
 func RunBots() {
-	bots := []models.Character{}
+	bots := []models.Player{}
 
-	err := db.Conn.Find(&bots, &models.Character{Bot: true}).Error
+	err := db.Conn.Find(&bots, &models.Player{Bot: true}).Error
 	if err != nil {
 		panic(err)
 	}
 
 	for {
 		for _, bot := range bots {
-			coords := strings.Split(bot.Position, ",")
-			lat, _ := strconv.ParseFloat(coords[0], 64)
-			lng, _ := strconv.ParseFloat(coords[1], 64)
-			position := Position{Lat: lat, Lng: lng}
+			position := Position{Lat: bot.Location.Lat, Lng: bot.Location.Lng}
 			log.Println(position)
 			time.Sleep(1 * time.Second)
 		}

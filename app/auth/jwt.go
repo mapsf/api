@@ -14,9 +14,9 @@ var (
 	tokenLifetimeDuration = time.Duration(60 * time.Minute)
 )
 
-func findCharacterByClaims(c jwt.MapClaims) (*models.Character, error) {
+func findCharacterByClaims(c jwt.MapClaims) (*models.Player, error) {
 	id := c["sub"]
-	char := &models.Character{}
+	char := &models.Player{}
 	if err := db.Conn.First(char, "id = ?", id).Error; err != nil {
 		return nil, err
 	}
@@ -24,7 +24,7 @@ func findCharacterByClaims(c jwt.MapClaims) (*models.Character, error) {
 	return char, nil
 }
 
-func GenerateUserBasedJwtToken(character *models.Character) (string, error) {
+func GenerateUserBasedJwtToken(character *models.Player) (string, error) {
 
 	token := jwt.New(jwt.SigningMethodHS512)
 
@@ -43,7 +43,7 @@ func GenerateUserBasedJwtToken(character *models.Character) (string, error) {
 	return str, nil
 }
 
-func ValidateJwt(val string) (*models.Character, error) {
+func ValidateJwt(val string) (*models.Player, error) {
 	token, err := jwt.Parse(val, func(token *jwt.Token) (interface{}, error) {
 		// Don't forget to validate the alg is what you expect:
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {

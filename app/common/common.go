@@ -9,7 +9,7 @@ import (
 type Params struct {
 	*http.Request
 	http.ResponseWriter
-	User *models.Character
+	User *models.Player
 }
 
 type responseError struct {
