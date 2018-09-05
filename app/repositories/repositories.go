@@ -2,8 +2,8 @@ package repositories
 
 import (
 	"strings"
-	"github.com/mapsf/api/api/app/db"
-	"github.com/mapsf/api/api/app/models"
+	"github.com/mapsf/api/app/db"
+	"github.com/mapsf/api/app/models"
 )
 
 func GetUserByLoginAndPassword(login, password string) (*models.Character, error) {

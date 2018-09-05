@@ -1,11 +1,11 @@
 package controllers
 
 import (
-	"github.com/mapsf/api/api/app/ws"
+	"github.com/mapsf/api/app/ws"
 	"strconv"
-	"github.com/mapsf/api/api/app/common"
+	"github.com/mapsf/api/app/common"
 	"github.com/gorilla/context"
-	"github.com/mapsf/api/api/app/models"
+	"github.com/mapsf/api/app/models"
 )
 
 func GetRootPathHandler(p common.Params) common.ResponseRenderer {

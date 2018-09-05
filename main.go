@@ -2,13 +2,12 @@ package main
 
 import (
 	"log"
-	"github.com/mapsf/api/api/app"
-	"github.com/mapsf/api/api/app/db"
+	"github.com/mapsf/api/app"
+	"github.com/mapsf/api/app/db"
 )
 
 import (
 	"github.com/joho/godotenv"
-	_ "github.com/joho/godotenv/autoload"
 )
 
 func handlePanic() {
@@ -20,6 +19,7 @@ func handlePanic() {
 }
 
 func loadEnvFile() {
+	log.Printf("LOAD ENV FILE...")
 	err := godotenv.Load("./.env")
 	if err != nil {
 		panic(err)

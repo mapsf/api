@@ -3,7 +3,7 @@ package common
 import (
 	"net/http"
 	"encoding/json"
-	"github.com/mapsf/api/api/app/models"
+	"github.com/mapsf/api/app/models"
 )
 
 type Params struct {

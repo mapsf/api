@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"github.com/mapsf/api/api/app/auth"
-	"github.com/mapsf/api/api/app/repositories"
-	"github.com/mapsf/api/api/app/common"
+	"github.com/mapsf/api/app/auth"
+	"github.com/mapsf/api/app/repositories"
+	"github.com/mapsf/api/app/common"
 	"net/http"
 	"encoding/json"
 )

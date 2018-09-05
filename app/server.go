@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"github.com/gorilla/handlers"
+	"github.com/mapsf/api/app/common"
 )
 
 func getPort() int {
@@ -18,7 +19,7 @@ func getPort() int {
 
 func InitServer() {
 	log.Printf(`RUNNING API SERVER IN "%s" mode`, os.Getenv("APP_ENV"))
-	log.Printf(`ENTRY HOST IS http://%s`, os.Getenv("API_HOST"))
+	log.Printf(`ENTRY HOST IS http://%s:%v`, common.GetLocalIP(), getPort())
 
 	cors := handlers.CORS(
 		handlers.AllowedOrigins([]string{"*"}),

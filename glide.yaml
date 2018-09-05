@@ -1,4 +1,4 @@
-package: github.com/mapsf/api/api
+package: github.com/mapsf/api
 import:
 - package: github.com/go-redis/redis
 - package: github.com/jinzhu/gorm

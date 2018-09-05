@@ -3,10 +3,10 @@ package app
 import (
 	"net/http"
 	"github.com/gorilla/mux"
-	"github.com/mapsf/api/api/app/controllers"
-	"github.com/mapsf/api/api/app/ws"
-	"github.com/mapsf/api/api/app/common"
-	"github.com/mapsf/api/api/app/auth"
+	"github.com/mapsf/api/app/controllers"
+	"github.com/mapsf/api/app/ws"
+	"github.com/mapsf/api/app/common"
+	"github.com/mapsf/api/app/auth"
 )
 
 func tryFindToken(r *http.Request) (token string) {

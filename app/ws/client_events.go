@@ -2,7 +2,7 @@ package ws
 
 import (
 	"log"
-	"github.com/mapsf/api/api/app/db"
+	"github.com/mapsf/api/app/db"
 	"strconv"
 )
 

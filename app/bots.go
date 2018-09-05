@@ -1,8 +1,8 @@
 package app
 
 import (
-	"github.com/mapsf/api/api/app/models"
-	"github.com/mapsf/api/api/app/db"
+	"github.com/mapsf/api/app/models"
+	"github.com/mapsf/api/app/db"
 	"time"
 	"strings"
 	"log"

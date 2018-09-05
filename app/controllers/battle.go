@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/mapsf/api/api/app/common"
+	"github.com/mapsf/api/app/common"
 )
 
 func AttackHandler(p common.Params) common.ResponseRenderer {

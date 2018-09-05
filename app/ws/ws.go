@@ -6,8 +6,8 @@ import (
 	"github.com/gorilla/websocket"
 	"log"
 	"encoding/json"
-	"github.com/mapsf/api/api/app/common"
-	"github.com/mapsf/api/api/app/models"
+	"github.com/mapsf/api/app/common"
+	"github.com/mapsf/api/app/models"
 )
 
 var upgrader = websocket.Upgrader{

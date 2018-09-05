@@ -6,7 +6,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"log"
 	"os"
-	"github.com/mapsf/api/api/app/models"
+	"github.com/mapsf/api/app/models"
 	"time"
 )
 
@@ -22,10 +22,10 @@ func panicIfErr(err error) {
 
 func InitDb() {
 
-	log.Printf("STARTING Conn CONNECTION...")
+	log.Printf("STARTING DB CONNECTION...")
 
 	var err error
-	var conn = fmt.Sprintf("postgresql://%v:%v@%v/%v?sslmode=disable", os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_HOST"), os.Getenv("DB_NAME"))
+	var conn = fmt.Sprintf("postgresql://%v:%v@%v:%v/%v?sslmode=disable", os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB_NAME"))
 
 	Conn, err = gorm.Open("postgres", conn)
 	if err != nil {

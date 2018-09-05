@@ -3,10 +3,10 @@ package auth
 import (
 	"github.com/dgrijalva/jwt-go"
 	"time"
-	"github.com/mapsf/api/api/app/models"
+	"github.com/mapsf/api/app/models"
 	"os"
 	"fmt"
-	"github.com/mapsf/api/api/app/db"
+	"github.com/mapsf/api/app/db"
 )
 
 var (
